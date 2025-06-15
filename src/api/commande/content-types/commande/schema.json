@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commandes",
+  "info": {
+    "singularName": "commande",
+    "pluralName": "commandes",
+    "displayName": "Commande "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "prenom": {
+      "type": "string",
+      "required": true
+    },
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "telephone": {
+      "type": "string",
+      "required": true
+    },
+    "adresse_rue": {
+      "type": "string",
+      "required": true
+    },
+    "code_postal": {
+      "type": "string",
+      "required": true
+    },
+    "ville": {
+      "type": "string",
+      "required": true
+    },
+    "pays": {
+      "type": "string",
+      "default": "france",
+      "required": true
+    },
+    "statut": {
+      "type": "enumeration",
+      "required": true,
+      "default": "en_attente",
+      "enum": [
+        "en_attente",
+        "payee",
+        "expediee",
+        "livree",
+        "annulee"
+      ]
+    },
+    "produit_commandes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produit-commande.produit-commande",
+      "mappedBy": "commande"
+    }
+  }
+}

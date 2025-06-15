@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produits",
+  "info": {
+    "singularName": "produit",
+    "pluralName": "produits",
+    "displayName": "Produit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nom",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "prix": {
+      "type": "decimal",
+      "required": true
+    },
+    "tva": {
+      "type": "decimal",
+      "required": true,
+      "default": 20
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categorie.categorie",
+      "inversedBy": "produits"
+    },
+    "produit_commandes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produit-commande.produit-commande",
+      "mappedBy": "produit"
+    }
+  }
+}
