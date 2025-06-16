@@ -42,7 +42,7 @@
         "audios"
       ]
     },
-    "category": {
+    "categorie": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::categorie.categorie",

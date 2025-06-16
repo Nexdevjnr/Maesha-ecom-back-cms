@@ -498,7 +498,7 @@ export interface ApiProduitProduit extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.Relation<
+    categorie: Schema.Attribute.Relation<
       'manyToOne',
       'api::categorie.categorie'
     >;

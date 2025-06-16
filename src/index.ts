@@ -1,5 +1,4 @@
 // import type { Core } from '@strapi/strapi';
-import seed from "../script/seed.js";
 
 export default {
   /**
@@ -17,7 +16,5 @@ export default {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  async bootstrap({ strapi }) {
-    await seed({ strapi });
-  },
+  bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
 };
