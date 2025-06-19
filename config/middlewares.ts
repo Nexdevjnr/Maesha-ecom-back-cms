@@ -6,7 +6,7 @@ export default [
     name: "strapi::cors",
     config: {
       enabled: true,
-      origin: ["http://localhost:3000"],
+      origin: ["http://localhost:3000", "https://www.thunderclient.com"],
       headers: [
         "Content-Type",
         "Authorization",
