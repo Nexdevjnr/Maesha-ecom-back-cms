@@ -14,6 +14,7 @@ export default [
         "Accept",
         "x-api-key",
       ],
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], // Ajoutez cette ligne
     },
   },
   "strapi::poweredBy",

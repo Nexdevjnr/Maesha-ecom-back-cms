@@ -3,10 +3,11 @@ export default (_config, { strapi }) => {
     const url = ctx.request.url;
     const isDev = process.env.NODE_ENV !== "production";
 
-    // On n'applique pas la vérif sur :
+    // N'appliquez pas la vérification sur:
     // - les routes hors /api/
+    // - les routes de paiement
     // - en environnement de développement
-    if (!url.startsWith("/api/") || isDev) {
+    if (!url.startsWith("/api/") || url.includes("/payment/") || isDev) {
       return await next();
     }
 
